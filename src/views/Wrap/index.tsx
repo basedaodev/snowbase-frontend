@@ -126,7 +126,7 @@ function Stake() {
                         <Grid item>
                             <div className="wrap-card-header">
                                 <p className="wrap-card-header-title">{t("wrap:WrapTitle")}</p>
-                                <p className="wrap-card-header-subtitle">{t("wrap:WrapYourSnowbank")}</p>
+                                <p className="wrap-card-header-subtitle">{t("wrap:WrapYourSnowbase")}</p>
                             </div>
                         </Grid>
 

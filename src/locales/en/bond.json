@@ -1,6 +1,6 @@
 {
-    "MintTitle": "Turbines",
-    "MintInactiveTitle": "Retired Turbines",
+    "MintTitle": "Bonds",
+    "MintInactiveTitle": "Retired Bonds",
     "ChooseToken": "Choose token",
     "ZapinAndMint": "Zapin & Mint",
     "ZapinApproveToken": "Approve {{token}}",

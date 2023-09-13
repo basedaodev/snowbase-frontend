@@ -7,7 +7,7 @@ import { Skeleton } from "@material-ui/lab";
 import ChooseToken from "./ChooseToken";
 import { IAllBondData } from "../../../hooks/bonds";
 import useTokens, { IAllTokenData } from "../../../hooks/tokens";
-import { avax, mim } from "../../../helpers/tokens";
+import { eth, mim } from "../../../helpers/tokens";
 import { shorten, trim } from "../../../helpers";
 import BondLogo from "../../../components/BondLogo";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,7 @@ import { IReduxState } from "../../../store/slices/state.interface";
 import { changeApproval, calcZapinDetails, ITokenZapinResponse, zapinMint } from "../../../store/slices/zapin-thunk";
 import { IPendingTxn, isPendingTxn, txnButtonText } from "../../../store/slices/pending-txns-slice";
 import { useWeb3Context } from "../../../hooks";
-import { wavax } from "../../../helpers/bond";
+import { weth } from "../../../helpers/bond";
 import AdvancedSettings from "../AdvancedSettings";
 import { ReactComponent as SettingsIcon } from "../../../assets/icons/settings.svg";
 import { warning } from "../../../store/slices/messages-slice";
@@ -43,9 +43,9 @@ function Zapin({ open, handleClose, bond }: IZapinProps) {
         return state.pendingTransactions;
     });
 
-    let defaultToken = tokens.find(token => token.name === avax.name);
+    let defaultToken = tokens.find(token => token.name === eth.name);
 
-    if (bond.name === wavax.name) {
+    if (bond.name === weth.name) {
         defaultToken = tokens.find(token => token.name === mim.name);
     }
 
@@ -104,7 +104,7 @@ function Zapin({ open, handleClose, bond }: IZapinProps) {
 
     const setMax = () => {
         const maxBondPriceToken = bond.maxBondPriceToken / priceToken;
-        let amount: any = Math.min(maxBondPriceToken, token.isAvax ? token.balance * 0.99 : token.balance);
+        let amount: any = Math.min(maxBondPriceToken, token.isEth ? token.balance * 0.99 : token.balance);
 
         if (amount) {
             amount = trim(amount);
@@ -225,7 +225,7 @@ function Zapin({ open, handleClose, bond }: IZapinProps) {
                                     </InputAdornment>
                                 }
                             />
-                            {hasAllowance() || token.isAvax ? (
+                            {hasAllowance() || token.isEth ? (
                                 <div
                                     className="zapin-header-token-select-btn"
                                     onClick={async () => {
@@ -247,7 +247,7 @@ function Zapin({ open, handleClose, bond }: IZapinProps) {
                                 </div>
                             )}
                         </div>
-                        {!hasAllowance() && !token.isAvax && (
+                        {!hasAllowance() && !token.isEth && (
                             <div className="zapin-header-help-text">
                                 <p>{t("bond:ZapinHelpText.FirstRow")}</p>
                                 <p>{t("bond:ZapinHelpText.SecondRow")}</p>

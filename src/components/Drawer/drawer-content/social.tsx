@@ -8,11 +8,11 @@ import DocsIcon from "../../../assets/icons/docs.svg";
 export default function Social() {
     return (
         <div className="social-row">
-            <Link href="https://github.com/SnowbankDAO" target="_blank">
+            <Link href="https://github.com/SnowbaseDAO" target="_blank">
                 <SvgIcon color="primary" component={GitHub} />
             </Link>
 
-            <Link href="https://twitter.com/SnowbankDAO" target="_blank">
+            <Link href="https://twitter.com/SnowbaseDAO" target="_blank">
                 <SvgIcon color="primary" component={Twitter} />
             </Link>
 
@@ -24,7 +24,7 @@ export default function Social() {
                 <SvgIcon color="primary" component={Discord} />
             </Link>
 
-            <Link href="https://docs.snowbank.finance/" target="_blank">
+            <Link href="https://docs.snowbase.finance/" target="_blank">
                 <img alt="" src={DocsIcon} />
             </Link>
         </div>

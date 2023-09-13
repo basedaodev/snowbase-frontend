@@ -160,12 +160,12 @@ function Redeem() {
                 <div className="stake-card redistribution-card">
                     <Grid className="stake-card-grid" container direction="column" spacing={2}>
                         <Grid item>
-                            <div className="stake-card-header">
+                            {/* <div className="stake-card-header">
                                 <p className="stake-card-header-title-redistribution">Final Redistribution</p>
                             </div>
                             <p className="stake-card-redeem-text">
-                                Great products convert unconscious, inchoate problems into conscious, realized opportunities. This is what motivated us to start Snowbank: building
-                                an amazing product for DeFi and the Avalanche ecosystem. We were fortunate enough to build an amazing community, with shared values, and a common
+                                Great products convert unconscious, inchoate problems into conscious, realized opportunities. This is what motivated us to start Snowbase: building
+                                an amazing product for DeFi and the BASE ecosystem. We were fortunate enough to build an amazing community, with shared values, and a common
                                 goal. Unfortunately, we have to come to the conclusion that our product isn’t meeting its audience. Interest in rebasing projects is at an all-time
                                 low. Despite our exciting v2 plans, we still believe the opportunity could be better captured by a fresh new project.
                                 <b>Therefore, it is now time for everyone to move on.</b>
@@ -182,9 +182,9 @@ function Redeem() {
                                     or other decentralized exchanges as low liquidity will negatively impact your selling price.
                                 </b>
                             </p>
-                            <Link href="https://docs.snowbank.finance/events/final-redistribution" target="_blank" className="stake-card-link-text">
-                                Learn more about Snowbank's Final Redistribution event and details here.
-                            </Link>
+                            <Link href="https://docs.snowbase.finance/events/final-redistribution" target="_blank" className="stake-card-link-text">
+                                Learn more about Snowbase's Final Redistribution event and details here.
+                            </Link> */}
                         </Grid>
                     </Grid>
                 </div>
@@ -298,7 +298,7 @@ function Redeem() {
                                             <p className="data-row-name">Your Staked SB Balance</p>
                                             <p className="data-row-value">
                                                 {isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(ssbBalance), 4)} sSB</>}{" "}
-                                                <a href="https://dapp.snowbank.finance/#/stake">Unstake</a>
+                                                <a href="https://dapp.snowbase.finance/#/stake">Unstake</a>
                                             </p>
                                         </div>
                                         <div className="data-row">

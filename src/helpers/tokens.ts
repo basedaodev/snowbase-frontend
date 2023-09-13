@@ -1,5 +1,5 @@
-import AvaxIcon from "../assets/tokens/AVAX.svg";
-import AaveIcon from "../assets/tokens/AAVE.e.png";
+import EthIcon from "../assets/tokens/WETH.png";
+import AaveIcon from "../assets/tokens/AAVE.png";
 import ApeXIcon from "../assets/tokens/Ape-X.png";
 import ApeinIcon from "../assets/tokens/APEIN.png";
 import BifiIcon from "../assets/tokens/BIFI.png";
@@ -7,7 +7,7 @@ import BlizzIcon from "../assets/tokens/BLIZZ.png";
 import BnbIcon from "../assets/tokens/BNB.png";
 import BoofiIcon from "../assets/tokens/BOOFI.png";
 import ChartIcon from "../assets/tokens/CHART.png";
-import DaiEIcon from "../assets/tokens/DAI.e.png";
+import DaiIcon from "../assets/tokens/DAI.png";
 import DreggIcon from "../assets/tokens/DREGG.png";
 import EleIcon from "../assets/tokens/ELE.png";
 import ElkIcon from "../assets/tokens/ELK.png";
@@ -18,7 +18,7 @@ import HuskyIcon from "../assets/tokens/HUSKY.png";
 import IceIcon from "../assets/tokens/ICE.png";
 import JoeIcon from "../assets/tokens/JOE.png";
 import KloIcon from "../assets/tokens/KLO.png";
-import LinkEIcon from "../assets/tokens/LINK.e.png";
+import LinkIcon from "../assets/tokens/LINK.png";
 import MainIcon from "../assets/tokens/MAI.png";
 import MimIcon from "../assets/tokens/MIM.svg";
 import MYakIcon from "../assets/tokens/mYAK.png";
@@ -32,18 +32,18 @@ import ShibxIcon from "../assets/tokens/SHIBX.png";
 import SingIcon from "../assets/tokens/SING.png";
 import SnobIcon from "../assets/tokens/SNOB.png";
 import SpellIcon from "../assets/tokens/SPELL.png";
-import SushiEIcon from "../assets/tokens/SUSHI.e.png";
+import SushiIcon from "../assets/tokens/SUSHI.png";
 import SynIcon from "../assets/tokens/SYN.png";
 import TeddyIcon from "../assets/tokens/TEDDY.png";
 import SbIcon from "../assets/tokens/SB.svg";
 import TsdIcon from "../assets/tokens/TSD.png";
-import UsdcEIcon from "../assets/tokens/USDC.e.png";
-import UsdtEIcon from "../assets/tokens/USDT.e.png";
+import UsdcIcon from "../assets/tokens/USDC.png";
+import UsdtIcon from "../assets/tokens/USDT.png";
 import VsoIcon from "../assets/tokens/VSO.png";
-import WavaxIcon from "../assets/tokens/WAVAX.png";
-import WBtcIcon from "../assets/tokens/WBTC.e.png";
+// import WethIcon from "../assets/tokens/WETH.png";
+import WBtcIcon from "../assets/tokens/WBTC.png";
 import WetIcon from "../assets/tokens/WET.png";
-import WethEIcon from "../assets/tokens/WETH.e.png";
+import WethIcon from "../assets/tokens/WETH.png";
 import XavaIcon from "../assets/tokens/XAVA.png";
 import YakIcon from "../assets/tokens/YAK.png";
 
@@ -51,20 +51,20 @@ export interface IToken {
     name: string;
     address: string;
     img: string;
-    isAvax?: boolean;
+    isEth?: boolean;
     decimals: number;
 }
 
-export const avax: IToken = {
-    name: "AVAX",
-    isAvax: true,
-    img: AvaxIcon,
+export const eth: IToken = {
+    name: "ETH",
+    isEth: true,
+    img: EthIcon,
     address: "",
     decimals: 18,
 };
 
 const aave: IToken = {
-    name: "AAVE.e",
+    name: "AAVE",
     address: "0x63a72806098Bd3D9520cC43356dD78afe5D386D9",
     img: AaveIcon,
     decimals: 18,
@@ -120,9 +120,9 @@ const chart: IToken = {
 };
 
 const dai: IToken = {
-    name: "DAI.e",
+    name: "DAI",
     address: "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
-    img: DaiEIcon,
+    img: DaiIcon,
     decimals: 18,
 };
 
@@ -197,9 +197,9 @@ const klo: IToken = {
 };
 
 const link: IToken = {
-    name: "LINK.e",
+    name: "LINK",
     address: "0x5947BB275c521040051D82396192181b413227A3",
-    img: LinkEIcon,
+    img: LinkIcon,
     decimals: 18,
 };
 
@@ -295,9 +295,9 @@ const spell: IToken = {
 };
 
 const sushi: IToken = {
-    name: "SUSHI.e",
+    name: "SUSHI",
     address: "0x37B608519F91f70F2EeB0e5Ed9AF4061722e4F76",
-    img: SushiEIcon,
+    img: SushiIcon,
     decimals: 18,
 };
 
@@ -330,16 +330,16 @@ const tsd: IToken = {
 };
 
 const usdc: IToken = {
-    name: "USDC.e",
+    name: "USDC",
     address: "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
-    img: UsdcEIcon,
+    img: UsdcIcon,
     decimals: 6,
 };
 
 const usdt: IToken = {
-    name: "USDT.e",
+    name: "USDT",
     address: "0xc7198437980c041c805A1EDcbA50c1Ce5db95118",
-    img: UsdtEIcon,
+    img: UsdtIcon,
     decimals: 6,
 };
 
@@ -350,15 +350,15 @@ const vso: IToken = {
     decimals: 18,
 };
 
-export const wavax: IToken = {
-    name: "WAVAX",
-    address: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
-    img: WavaxIcon,
-    decimals: 18,
-};
+// export const weth: IToken = {
+//     name: "WETH",
+//     address: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+//     img: WethIcon,
+//     decimals: 18,
+// };
 
 const wbtc: IToken = {
-    name: "WBTC.e",
+    name: "WBTC",
     address: "0x50b7545627a5162F82A992c33b87aDc75187B218",
     img: WBtcIcon,
     decimals: 8,
@@ -371,10 +371,10 @@ const wet: IToken = {
     decimals: 18,
 };
 
-const weth: IToken = {
-    name: "WETH.e",
+export const weth: IToken = {
+    name: "WETH",
     address: "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
-    img: WethEIcon,
+    img: WethIcon,
     decimals: 18,
 };
 
@@ -393,7 +393,7 @@ const yak: IToken = {
 };
 
 export default [
-    avax,
+    eth,
     aave,
     apeX,
     apein,
@@ -435,7 +435,7 @@ export default [
     usdc,
     usdt,
     vso,
-    wavax,
+    weth,
     wbtc,
     wet,
     weth,

@@ -28,7 +28,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
     const { provider, address, chainID, checkWrongNetwork } = useWeb3Context();
 
     const [quantity, setQuantity] = useState("");
-    const [useAvax, setUseAvax] = useState(false);
+    const [useEth, setUseEth] = useState(false);
 
     const isBondLoading = useSelector<IReduxState, boolean>(state => state.bonding.loading ?? true);
     const [zapinOpen, setZapinOpen] = useState(false);
@@ -62,7 +62,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
                         networkID: chainID,
                         provider,
                         address: recipientAddress || address,
-                        useAvax,
+                        useEth,
                     }),
                 );
                 clearInput();
@@ -78,7 +78,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
                     networkID: chainID,
                     provider,
                     address: recipientAddress || address,
-                    useAvax,
+                    useEth,
                 }),
             );
             clearInput();
@@ -94,7 +94,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
     }, [bond.allowance]);
 
     const setMax = () => {
-        let amount: any = Math.min(bond.maxBondPriceToken * 0.9999, useAvax ? bond.avaxBalance * 0.99 : bond.balance);
+        let amount: any = Math.min(bond.maxBondPriceToken * 0.9999, useEth ? bond.ethBalance * 0.99 : bond.balance);
 
         if (amount) {
             amount = trim(amount);
@@ -125,16 +125,16 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
         setZapinOpen(false);
     };
 
-    const displayUnits = useAvax ? "AVAX" : bond.displayUnits;
+    const displayUnits = useEth ? "ETH" : bond.displayUnits;
 
     return (
         <Box display="flex" flexDirection="column">
             <Box display="flex" justifyContent="space-around" flexWrap="wrap">
-                {bond.name === "wavax" && (
+                {bond.name === "weth" && (
                     <FormControl className="ohm-input" variant="outlined" color="primary" fullWidth>
-                        <div className="avax-checkbox">
-                            <input type="checkbox" checked={useAvax} onClick={() => setUseAvax(!useAvax)} />
-                            <p>{t("bond:UseAvax")}</p>
+                        <div className="eth-checkbox">
+                            <input type="checkbox" checked={useEth} onClick={() => setUseEth(!useEth)} />
+                            <p>{t("bond:UseEth")}</p>
                         </div>
                     </FormControl>
                 )}
@@ -155,7 +155,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
                         }
                     />
                 </FormControl>
-                {hasAllowance() || useAvax ? (
+                {hasAllowance() || useEth ? (
                     <div
                         className="transaction-button bond-approve-btn"
                         onClick={async () => {
@@ -183,7 +183,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
                 </div>
                 */}
 
-                {!hasAllowance() && !useAvax && (
+                {!hasAllowance() && !useEth && (
                     <div className="help-text">
                         <p className="help-text-desc">{t("bond:ApproveHelpText")}</p>
                     </div>
@@ -199,7 +199,7 @@ function BondPurchase({ bond, slippage, recipientAddress }: IBondPurchaseProps) 
                                 <Skeleton width="100px" />
                             ) : (
                                 <>
-                                    {trim(useAvax ? bond.avaxBalance : bond.balance, 4)} {displayUnits}
+                                    {trim(useEth ? bond.ethBalance : bond.balance, 4)} {displayUnits}
                                 </>
                             )}
                         </p>

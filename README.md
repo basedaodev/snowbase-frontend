@@ -1,5 +1,5 @@
-# [Snowbank Frontend](https://dapp.snowbank.finance/)
-This is the front-end repo for Snowbank. 
+# [Snowbase Frontend](https://dapp.snowbase.finance/)
+This is the front-end repo for Snowbase. 
 
 ##  🔧 Setting up Local Development
 
@@ -10,8 +10,8 @@ Required:
 
 
 ```bash
-git clone https://github.com/SnowbankDAO/snowbank-frontend
-cd snowbank-frontend
+git clone https://github.com/SnowbaseDAO/snowbase-frontend
+cd snowbase-frontend
 yarn install
 npm run start
 ```
@@ -24,7 +24,7 @@ Each PR into `main` will get its own custom URL that is visible on the PR page. 
 
 ## 👏🏽 Contributing Guidelines 
 
-We keep an updated list of bugs/feature requests in [Github Issues](https://github.com/SnowbankDAO/snowbank-frontend/issues). 
+We keep an updated list of bugs/feature requests in [Github Issues](https://github.com/SnowbaseDAO/snowbase-frontend/issues). 
 
 Once you submit a PR, our CI will generate a temporary testing URL where you can validate your changes. Tag any of the gatekeepers on the review to merge them into master. 
 

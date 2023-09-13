@@ -55,8 +55,8 @@ export const loadAppDetails = createAsyncThunk(
         const daoSbAmount = Number(ethers.utils.formatUnits(daoSb, "gwei"));
 
         const sbBondsAmountsPromises = allBonds
-            .filter(bond => bond.name !== "mim_avax_turbine")
-            .filter(bond => bond.name !== "avax_fxs_turbine")
+            .filter(bond => bond.name !== "mim_eth_bond")
+            .filter(bond => bond.name !== "eth_fxs_bond")
             .map(bond => bond.getSbAmount(networkID, provider));
         const sbBondsAmounts = await Promise.all(sbBondsAmountsPromises);
 

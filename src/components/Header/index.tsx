@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import MenuIcon from "../../assets/icons/hamburger.svg";
-import SnowbankMenu from "./snowbank-menu";
+import SnowbaseMenu from "./snowbase-menu";
 import ConnectButton from "./connect-button";
 import "./header.scss";
 import { DRAWER_WIDTH, TRANSITION_DURATION } from "../../constants/style";
@@ -49,7 +49,7 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
             <AppBar position="sticky" className={classes.appBar} elevation={0}>
                 <Box className="dapp-information-box">
                     <p className="dapp-information-text">
-                        Staking rewards & turbines have been paused. The final redistribution event is available at the "Final Redistribution" page.
+                        Safety Check: Always verify you're on app.snowbase.finance!
                     </p>
                 </Box>
                 <Toolbar disableGutters className="dapp-topbar">
@@ -57,7 +57,7 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
                         <img src={MenuIcon} alt="" />
                     </div>
                     <div className="dapp-topbar-btns-wrap">
-                        {!isVerySmallScreen && <SnowbankMenu />}
+                        {!isVerySmallScreen && <SnowbaseMenu />}
                         <ConnectButton />
                     </div>
                 </Toolbar>

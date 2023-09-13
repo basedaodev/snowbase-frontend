@@ -14,7 +14,7 @@ export const messages = {
     your_balance_updated: i18n.t("messages.YourBalanceUpdated"),
     nothing_to_claim: i18n.t("messages.NothingToClaim"),
     something_wrong: i18n.t("messages.SomethingWrong"),
-    switch_to_avalanche: i18n.t("messages.SwitchToAvalanche"),
+    switch_to_base: i18n.t("messages.SwitchToBase"),
     slippage_too_small: i18n.t("messages.SlippageTooSmall"),
     slippage_too_big: i18n.t("messages.SlippageTooBig"),
     your_balance_update_soon: i18n.t("messages.YourBalanceUpdateSoon"),

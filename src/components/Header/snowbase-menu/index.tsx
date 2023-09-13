@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAddresses, TOKEN_DECIMALS, DEFAULD_NETWORK } from "../../../constants";
 import { useSelector } from "react-redux";
 import { Link, Fade, Popper } from "@material-ui/core";
-import "./snowbank-menu.scss";
+import "./snowbase-menu.scss";
 import { IReduxState } from "../../../store/slices/state.interface";
 import { getTokenUrl } from "../../../helpers";
 
@@ -31,7 +31,7 @@ const addTokenToWallet = (tokenSymbol: string, tokenAddress: string) => async ()
     }
 };
 
-function SnowbankMenu() {
+function SnowbaseMenu() {
     const { t } = useTranslation();
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -91,4 +91,4 @@ function SnowbankMenu() {
     );
 }
 
-export default SnowbankMenu;
+export default SnowbaseMenu;

@@ -9,7 +9,7 @@ import Snowglobe from "../../../assets/icons/snowglobe.svg";
 import GovIcon from "../../../assets/icons/governance.svg";
 
 import ProIcon from "../../../assets/icons/pro.svg";
-import SnowbankIcon from "../../../assets/icons/snowbank-nav-header.svg";
+import SnowbaseIcon from "../../../assets/icons/snowbase-nav-header.svg";
 import DashboardIcon from "../../../assets/icons/dashboard.svg";
 import { trim, shorten } from "../../../helpers";
 import { useAddress } from "../../../hooks";
@@ -32,8 +32,8 @@ function NavContent() {
     return (
         <div className="dapp-sidebar">
             <div className="branding-header">
-                <Link href="https://snowbank.finance" target="_blank">
-                    <img alt="" src={SnowbankIcon} />
+                <Link href="https://snowbase.finance" target="_blank">
+                    <img alt="" src={SnowbaseIcon} />
                 </Link>
 
                 {address && (
@@ -55,17 +55,17 @@ function NavContent() {
                         </div>
                     </Link>
 
-                    <Link component={NavLink} to="/redeem" className="button-dapp-menu">
+                    {/* <Link component={NavLink} to="/redeem" className="button-dapp-menu">
                         <div className="dapp-menu-item">
                             <img alt="" src={RedeemIcon} />
                             <p>Final Redistribution</p>
                         </div>
-                    </Link>
+                    </Link> */}
 
                     <Link component={NavLink} to="/stake" className="button-dapp-menu">
                         <div className="dapp-menu-item">
                             <img alt="" src={StakeIcon} />
-                            <p>Unstake</p>
+                            <p>Stake</p>
                         </div>
                     </Link>
 
@@ -73,19 +73,19 @@ function NavContent() {
                         <div className="dapp-menu-item">
                             <img alt="" src={BorrowIcon} />
 
-                            <p>Unwrap</p>
+                            <p>Wrap</p>
                         </div>
                     </Link>
 
                     <Link component={NavLink} id="bond-nav" to="/mints" className="button-dapp-menu">
                         <div className="dapp-menu-item">
                             <img alt="" src={BondIcon} />
-                            <p>{t("Turbines")}</p>
+                            <p>{t("Bonds")}</p>
                         </div>
                     </Link>
 
                     <div className="bond-discounts">
-                        <p className="bond-discounts-title">{t("TurbinesDiscounts")}</p>
+                        <p className="bond-discounts-title">{t("BondDiscounts")}</p>
                         {bonds
                             .filter(bond => bond.isActive)
                             .map((bond, i) => (
@@ -139,7 +139,7 @@ function NavContent() {
                         </div>
                     </Link> */}
 
-                    <Link href="https://snapshot.org/#/snowbankgovernance.eth" target="_blank" className="button-dapp-menu">
+                    <Link href="https://snapshot.org/#/snowbasegovernance.eth" target="_blank" className="button-dapp-menu">
                         <div className="dapp-menu-item">
                             <img alt="" src={GovIcon} />
                             <p>{t("Governance")}</p>
